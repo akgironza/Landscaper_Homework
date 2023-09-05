@@ -30,7 +30,7 @@ def quit_game():
 
 # add items to inventory as they are purchased, incorporate into what shows to user
 
-
+# PLAYER CAN USE TEETH
 while (game_data["total"] < 5):
     user_input = (input("""
         What would you like to do?
@@ -47,6 +47,7 @@ while (game_data["total"] < 5):
         game_data["total"] += 1
         print(f"You now have a total of ${game_data['total']}")
 
+# PLAYER CAN GET SCISSORS
     while (game_data["total"] >= 5):
         user_input = (input("""
             You have reached $5! What would you like to do?
@@ -67,6 +68,7 @@ while (game_data["total"] < 5):
             game_data["total"] -=5
             print(f"You now have a total of ${game_data['total']}. But with your rusty scissors you're moving up in the world!")
 
+# PLAYER CAN USE SCISSORS
             while (True):
                 user_input = (input("""
                     USE TEETH -- Spend the day cutting lawns with just your teeth and make $1.
@@ -85,4 +87,34 @@ while (game_data["total"] < 5):
                 if (user_input == "USE SCISSORS"):
                     game_data["total"] +=5
                     print(f"You now have a total of ${game_data['total']}")
+
+# PLAYER CAN GET PUSH LAWNMOWER  
+                while (game_data["total"] >= 25):
+                    user_input = (input("""
+                        You have reached $25! What would you like to do?
+                        USE TEETH -- Spend the day cutting lawns with just your teeth and make $1.
+                        USE SCISSORS -- Spend the day cutting lawns with your rusty scissors and make $5.
+                        GET PUSH LAWNMOWER -- Buy an old-timey lawnmower for $25.
+                        QUIT -- Quit the game    
+                               """))
+                    
+                    if (user_input == "QUIT"):
+                        quit_game()
+                        break
+
+                    if (user_input == "USE TEETH"):
+                        game_data["total"] += 1
+                        print(f"You now have a total of ${game_data['total']}")
+
+                    if (user_input == "USE SCISSORS"):
+                        game_data["total"] +=5
+                        print(f"You now have a total of ${game_data['total']}")
+
+                    if (user_input == "GET PUSH LAWNMOWER"):
+                        game_data["total"] -=25
+                        print(f"You now have a total of ${game_data['total']}. But with your push lawnmower you're moving up in the world!")
+
+                    
+
+
 
