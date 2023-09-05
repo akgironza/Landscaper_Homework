@@ -114,6 +114,32 @@ while (game_data["total"] < 5):
                         game_data["total"] -=25
                         print(f"You now have a total of ${game_data['total']}. But with your push lawnmower you're moving up in the world!")
 
+# PLAYER CAN USE PUSH LAWNMOWER
+                    while (True):
+                        user_input = (input("""
+                            USE TEETH -- Spend the day cutting lawns with just your teeth and make $1.
+                            USE SCISSORS -- Spend the day cutting lawns with your rusty scissors and make $5.
+                            USE LAWNMOWER -- Spend the day cutting lawns with your old-timey lawnmower and make $50.
+                            QUIT -- Quit the game    
+                               """))
+                
+                        if (user_input == "QUIT"):
+                            quit_game()
+                            break
+                
+                        if (user_input == "USE TEETH"):
+                            game_data["total"] += 1
+                            print(f"You now have a total of ${game_data['total']}")
+                    
+                        if (user_input == "USE SCISSORS"):
+                            game_data["total"] +=5
+                            print(f"You now have a total of ${game_data['total']}")
+
+                        if (user_input == "USE LAWNMOWER"):
+                            game_data["total"] +=50
+                            print(f"You now have a total of ${game_data['total']}")
+
+                    
                     
 
 
