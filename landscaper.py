@@ -11,7 +11,22 @@ game_data = {
     "inventory": ["TEETH"]
     }
 
-# function for basic stuff including "what would you like to do?" and "use teeth"
+# Function to handle quitting game
+def quit_game():
+    game_data["quit"] = True
+    
+    if (game_data["quit"] == True):
+        print("You have quit the game. Goodbye!")
+    
+    # replaces:     
+        #if (user_input == "QUIT"):
+            #game_data["quit"] = True
+
+        #if (game_data["quit"] == True):
+            #print("You have quit the game. Goodbye!")
+            #break
+
+# functions for other stuff including "what would you like to do?" and "use teeth"
 
 # add items to inventory as they are purchased, incorporate into what shows to user
 
@@ -23,11 +38,9 @@ while (game_data["total"] < 5):
                 (If you save up enough money, maybe you can get some tools...)
             QUIT -- Quit the game.
                            """))
+    
     if (user_input == "QUIT"):
-        game_data["quit"] = True
-
-    if (game_data["quit"] == True):
-        print("You have quit the game. Goodbye!")
+        quit_game()
         break
 
     if (user_input == "USE TEETH"):
@@ -43,10 +56,7 @@ while (game_data["total"] < 5):
                 QUIT -- Quit the game    
                                """))
         if (user_input == "QUIT"):
-            game_data["quit"] = True
-
-        if (game_data["quit"] == True):
-            print("You have quit the game. Goodbye!")
+            quit_game()
             break
 
         if (user_input == "USE TEETH"):
@@ -65,10 +75,7 @@ while (game_data["total"] < 5):
                                """))
                 
                 if (user_input == "QUIT"):
-                    game_data["quit"] = True
-                    
-                if (game_data["quit"] == True):
-                    print("You have quit the game. Goodbye!")
+                    quit_game()
                     break
                 
                 if (user_input == "USE TEETH"):
