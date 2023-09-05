@@ -7,8 +7,14 @@ print(user_input)
 # Store game data in a dictionary
 game_data = {
     "total": 0,
-    "quit": False
+    "quit": False,
+    "inventory": ["TEETH"]
     }
+
+# function for basic stuff including "what would you like to do?" and "use teeth"
+
+# add items to inventory as they are purchased, incorporate into what shows to user
+
 
 while (game_data["total"] < 5):
     user_input = (input("""
@@ -72,7 +78,4 @@ while (game_data["total"] < 5):
                 if (user_input == "USE SCISSORS"):
                     game_data["total"] +=5
                     print(f"You now have a total of ${game_data['total']}")
-
-
-    # At any point, if you are currently using your teeth, you can buy a pair of rusty scissors for $5. You can do this once, assuming you have enough money.
 
